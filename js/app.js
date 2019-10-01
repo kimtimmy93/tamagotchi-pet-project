@@ -6,21 +6,36 @@ class Tomagotchi {
         this.hunger = 0;
         this.sleepiness = 0;
         this.boredom = 0;
+        this.gameTimer = 59;
     }
-    setHunger() {
+    setGameTimer () {
+        const $gameTimer = $('#gameTimer')
+
+        const interval = setInterval(() => {
+            if(this.time === 0){
+                clearInterval(interval); //stops the interval
+            } else {
+                this.time--
+            }
+            $gameTimer.text(`timer: ${this.time}sec`)
+        }, 59000)
+    }
+    setHunger(hunger) {
+        
         console.log('grrr')
     }
-    setSleepiness() {
+    setSleepiness(sleepiness) {
+        
         console.log('zzZ')
     }
-    setBoredom() {
+    setBoredom(boredom) {
+        
         console.log('yawn')
     }
-    
 }
 
-const tommy = new Tomagotchi('tommy');
-console.log(tommy, 'tommy')
+const rick = new Tomagotchi('tommy');
+console.log(rick, 'rick')
 
 
     
