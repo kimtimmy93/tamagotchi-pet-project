@@ -1,27 +1,26 @@
 class Tomagotchi {
-    constructor (name, health, level, hunger, sleepiness, boredom) {
+    constructor (name) {
         this.name = name;
-        this.health = health;
-        this.level = level;
-        this.hunger = hunger;
-        this.sleepiness = sleepiness;
-        this.boredom = boredom;
+        this.health = 100;
+        this.level = 0;
+        this.hunger = 0;
+        this.sleepiness = 0;
+        this.boredom = 0;
     }
-
-}
-
-class Character extends Tomagotchi {
-    eat() {
-        console.log('yum')
+    setHunger() {
+        console.log('grrr')
     }
-    sleep() {
+    setSleepiness() {
         console.log('zzZ')
     }
-    play() {
-        console.log('yay')
+    setBoredom() {
+        console.log('yawn')
     }
-    poo() {
-        console.log('mmf')
-    }
-
+    
 }
+
+const tommy = new Tomagotchi('tommy');
+console.log(tommy, 'tommy')
+
+
+    
