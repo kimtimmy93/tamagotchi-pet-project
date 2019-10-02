@@ -29,6 +29,7 @@ class Tomagotchi {
 }
 console.log(Tomagotchi); 
 
+
 const game = {
 gameTimer: 59,
 hunger: 0,
@@ -117,6 +118,14 @@ setGameTimer () {
                     clearInterval(int);
                  } else if(this.gameTimer === 0){
                      clearInterval(int);
+                 } else if(this.level < 2){
+                    $('#rick1').attr('src', 'https://i.redd.it/93d8smnl64qx.gif')
+                 } else if(this.level === 2){
+                    $('#rick1').attr('src', 'https://media.giphy.com/media/5wFHChzgBtfANDa76U/giphy.gif')
+                    $('#rick1').attr('id', 'rick2')
+                 } else if(this.level === 3){
+                    $('#rick2').attr('src', 'picklerick.gif')
+                    $('#rick2').attr('id', 'rick3')
                  }
             },2000)
 
@@ -127,6 +136,7 @@ setGameTimer () {
 console.log(game)
 const rick = new Tomagotchi('rick');
 console.log(rick, 'rick')
+
 
 
     

@@ -1,3 +1,6 @@
+html {
+    background-color: rgb(255,0,255)
+}
 .container {
     width: 600px;
     height: 800px;
@@ -9,7 +12,6 @@
     position: relative;
     z-index: 1;
     border: 5px solid #ffc000;
-
 }
 
 #gameTimer {
@@ -17,7 +19,7 @@
     right: 100px;
     text-align: left;
     position: absolute;
-    z-index: 3;
+    z-index: 4;
     color: #35cc04;
     font-family: 'VT323', monospace;
     font-size: 14pt;
@@ -42,6 +44,7 @@
     margin-top: 270px;
     margin-left: 10px;
     border: 10px dashed blue;
+    box-shadow: 8px 8px 5px grey;
     border-radius: 25px;
     display: inline-block;
     z-index: 2;
@@ -58,8 +61,8 @@
     z-index: 3;
 }
 #rick2 {
-    width: 150px;
-    height: 150px;
+    width: 170px;
+    height: 170px;
     margin-right: 40px;
     bottom: 245px;
     position: relative;
@@ -69,9 +72,10 @@
 
 }
 #rick3 {
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 250px;
     margin-right: 40px;
+    margin-top: -50px;
     bottom: 245px;
     position: relative;
     opacity: 0.9;
@@ -129,6 +133,7 @@ button {
     font-family: 'VT323', monospace;
     font-size: 13pt;
     color: #35cc04;
+    box-shadow: 5px 5px 5px grey;
 }
 
 #feed {
@@ -190,18 +195,22 @@ button {
 }
 
 #feed:active {
+    font-size: 20pt;
     background: #1E90FF;
 }
 
 #play:active {
+    font-size: 20pt;
     background: #1E90FF;
 }
 
 #lights:active {
+    font-size: 20pt;
     background: #1E90FF;
 }
 
 #start:active {
+    font-size: 23pt;
     background: #DC143C;
 }
 
