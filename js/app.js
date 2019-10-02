@@ -5,8 +5,18 @@ $('#start').on('click', () => {
     game.setHunger();
     game.setGameTimer();
     game.setLevel();
-
   });
+
+$('#feed').on('click', () => {
+    game.hunger--
+});
+$('#play').on('click', () => {
+    game.boredom--
+});
+$('#lights').on('click', () => {
+    game.sleepiness--
+});
+
 
 class Tomagotchi {
     constructor (name) {
@@ -30,10 +40,16 @@ setGameTimer () {
         
         if(this.gameTimer === 0){
             clearInterval(interval); //stops the interval
+        } else if(this.hunger === 10) {
+            clearInterval(interval); 
+        } else if(this.sleepiness === 10){
+            clearInterval(interval); 
+        } else if(this.boredom === 10){
+            clearInterval(interval); 
         } else {
             this.gameTimer--
         }
-        $gameTimer.text(`timer: ${this.gameTimer}s`)
+        $gameTimer.text(`Timer: ${this.gameTimer}s`)
 
         }, 1000) 
     },
@@ -45,8 +61,12 @@ setGameTimer () {
         $hunger.text(`Hunger: ${this.hunger}`)
             if(this.hunger === 10){
                 clearInterval(int);
-             } 
-        },1000)   
+             } else if(this.boredom === 10){
+                clearInterval(int);
+             } else if(this.sleepiness === 10){
+                clearInterval(int);
+             }
+        },3000)   
     },
     setSleepiness() {
         const $sleepiness = $('#sleepiness')
@@ -56,7 +76,11 @@ setGameTimer () {
          $sleepiness.text(`Sleepiness: ${this.sleepiness}`)
              if(this.sleepiness === 10){
                  clearInterval(int);
-              }
+              } else if(this.hunger === 10) {
+                clearInterval(int);
+              } else if(this.boredom === 10) {
+                clearInterval(int);
+              } 
          },1500) 
                  
     },
@@ -68,10 +92,12 @@ setGameTimer () {
         $boredom.text(`Boredom: ${this.boredom}`)
             if(this.boredom === 10){
                 clearInterval(int);
+             } else if(this.hunger === 10){
+                clearInterval(int);
+             } else if(this.sleepiness === 10){
+                clearInterval(int);
              }
-        },2000) 
-            
-            
+        },2000)         
     },
     setLevel (){
         const $level = $('#level')
@@ -80,6 +106,14 @@ setGameTimer () {
             $level.text(`Level: ${this.level}`)
                 if(this.level === 1000){
                     clearInterval(int);
+                 } else if(this.hunger === 10){
+                    clearInterval(int);
+                 } else if(this.boredom === 10){
+                    clearInterval(int);
+                 } else if(this.sleepiness === 10){
+                    clearInterval(int);
+                 } else if(this.gameTimer === 0){
+                     clearInterval(int);
                  }
             },2000)
 
