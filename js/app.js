@@ -5,6 +5,7 @@ $('#start').on('click', () => {
     game.setHunger();
     game.setGameTimer();
     game.setLevel();
+
   });
 
 class Tomagotchi {

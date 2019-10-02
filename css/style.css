@@ -1,37 +1,109 @@
 .container {
-    width: 444px;
-    height: 660px;
+    width: 600px;
+    height: 800px;
     background: #ffc000;
     display: inline-block;
     -webkit-border-radius: 63px 63px 63px 63px / 108px 108px 72px 72px;
     border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
     text-align: center;
     position: relative;
+    z-index: 1;
 
 }
 
-.square {
-    height: 200px;
-    width: 300px;
-    background-color: #557;
+#gameTimer {
+    margin-top: 550px;
+    right: 100px;
+    text-align: left;
     position: absolute;
-    text-align: center;
-    margin-top: 170px;
+    z-index: 3;
+    color: #35cc04;
+    font-family: 'VT323', monospace;
+    font-size: 14pt;
+}
+
+#level {
+    margin-top: 285px;
+    right: 100px;
+    text-align: left;
+    position: absolute;
+    z-index: 3;
+    color: #35cc04;
+    font-family: 'VT323', monospace;
+    font-size: 16pt;
+}
+
+.square {
+    height: 310px;
+    width: 440px;
+    background-color: rgba(40,40,40,0.77);
+    position: relative;
+    margin-top: 270px;
+    margin-left: 10px;
     border: 5px solid black;
+    border-radius: 25px;
     display: inline-block;
+    z-index: 2;
 }
 
 img {
     width: 100px;
     height: 100px;
-    margin: 100px;
+    margin-right: 40px;
+    bottom: 245px;
     position: relative;
+    animation: nudge 2s linear infinite alternate;
+    z-index: 3;
 
+}
+
+@keyframes nudge {
+    100% {
+      transform: translateX(-30%);
+      top: 50%;
+    }
+}
+
+#hunger {
+    margin-top: 290px;
+    left: 100px;
+    text-align: left;
+    position: absolute;
+    z-index: 3;
+    color: #35cc04;
+    font-family: 'VT323', monospace;
+    font-size: 15pt;
+}
+
+#sleepiness{
+    margin-top: 330px;
+    left: 100px;
+    text-align: left;
+    position: absolute;
+    z-index: 3;
+    color: #35cc04;
+    font-family: 'VT323', monospace;
+    font-size: 15pt;
+}
+
+#boredom {
+    margin-top: 310px;
+    left: 100px;
+    text-align: left;
+    position: absolute;
+    z-index: 3;
+    color: #35cc04;
+    font-family: 'VT323', monospace;
+    font-size: 15pt;
 }
 
 button {
     position: relative;
     border-radius: 100%;
-
+    z-index: 2;
 }
+
+/* #start {
+    
+} */
 
