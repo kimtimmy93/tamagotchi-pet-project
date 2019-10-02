@@ -1,5 +1,8 @@
 $('#start').on('click', () => {
     console.log('button works')
+    game.setSleepiness();
+    game.setBoredom();
+    game.setHunger();
     game.setGameTimer();
   });
 
@@ -7,28 +10,16 @@ class Tomagotchi {
     constructor (name) {
         this.name = name;
         this.health = 100;
-        this.level = 0;
-        this.hunger = 0;
-        this.sleepiness = 0;
-        this.boredom = 0;
-        
-    }
-    setHunger(hunger) {
-        
-        console.log('grrr')
-    }
-    setSleepiness(sleepiness) {
-        
-        console.log('zzZ')
-    }
-    setBoredom(boredom) {
-        
-        console.log('yawn')
     }
 }
+console.log(Tomagotchi); 
 
 const game = {
 gameTimer: 59,
+hunger: 0,
+sleepiness: 0,
+boredom: 0,
+level: 0,
 setGameTimer () {
     const $gameTimer = $('#gameTimer')
 
@@ -41,11 +32,48 @@ setGameTimer () {
         }
         $gameTimer.text(`timer: ${this.gameTimer}s`)
 
-    }, 1000)
-        // this.setGameTimer();
+        }, 1000) 
+    },
+    setHunger() {
+        const $hunger = $('#hunger')
+    
+       const int = setInterval(() => {
+        this.hunger++
+        $hunger.text(`Hunger: ${this.hunger}`)
+            if(this.hunger === 10){
+                clearInterval(int);
+             }
+        },1000)   
+    },
+    setSleepiness() {
+        const $sleepiness = $('#sleepiness')
+    
+        const int = setInterval(() => {
+         this.sleepiness++
+         $sleepiness.text(`Sleepiness: ${this.sleepiness}`)
+             if(this.sleepiness === 10){
+                 clearInterval(int);
+              }
+         },1500) 
+            
+            
+    },
+    setBoredom() {
+        const $boredom = $('#boredom')
+    
+       const int = setInterval(() => {
+        this.boredom++
+        $boredom.text(`Boredom: ${this.boredom}`)
+            if(this.boredom === 10){
+                clearInterval(int);
+             }
+        },2000) 
+            
+            
     }
+        
 }
-
+console.log(game)
 const rick = new Tomagotchi('rick');
 console.log(rick, 'rick')
 
