@@ -1,3 +1,8 @@
+$('#start').on('click', () => {
+    console.log('button works')
+    game.setGameTimer();
+  });
+
 class Tomagotchi {
     constructor (name) {
         this.name = name;
@@ -6,19 +11,7 @@ class Tomagotchi {
         this.hunger = 0;
         this.sleepiness = 0;
         this.boredom = 0;
-        this.gameTimer = 59;
-    }
-    setGameTimer () {
-        const $gameTimer = $('#gameTimer')
-
-        const interval = setInterval(() => {
-            if(this.time === 0){
-                clearInterval(interval); //stops the interval
-            } else {
-                this.time--
-            }
-            $gameTimer.text(`timer: ${this.time}sec`)
-        }, 59000)
+        
     }
     setHunger(hunger) {
         
@@ -34,7 +27,26 @@ class Tomagotchi {
     }
 }
 
-const rick = new Tomagotchi('tommy');
+const game = {
+gameTimer: 59,
+setGameTimer () {
+    const $gameTimer = $('#gameTimer')
+
+    const interval = setInterval(() => {
+        
+        if(this.gameTimer === 0){
+            clearInterval(interval); //stops the interval
+        } else {
+            this.gameTimer--
+        }
+        $gameTimer.text(`timer: ${this.gameTimer}s`)
+
+    }, 1000)
+        // this.setGameTimer();
+    }
+}
+
+const rick = new Tomagotchi('rick');
 console.log(rick, 'rick')
 
 
