@@ -5,6 +5,10 @@ $('#start').on('click', () => {
     game.setHunger();
     game.setGameTimer();
     game.setLevel();
+    // Tomagotchi.setName();
+
+    const name = prompt("Enter your pet's name!", "Your pet name here")
+
   });
 
 $('#feed').on('click', () => {
@@ -24,8 +28,12 @@ $('#lights').on('click', () => {
 class Tomagotchi {
     constructor (name) {
         this.name = name;
-    
     }
+    setName () {
+        const $name = $('#name')
+        // $name.val(this.name);
+        $name.text(`Name: ${this.name}`)
+        }
 }
 console.log(Tomagotchi); 
 
@@ -36,7 +44,6 @@ hunger: 0,
 sleepiness: 0,
 boredom: 0,
 level: 0,
-health: 100,
 setGameTimer () {
     const $gameTimer = $('#gameTimer')
 
@@ -45,10 +52,19 @@ setGameTimer () {
         if(this.gameTimer === 0){
             clearInterval(interval); //stops the interval
         } else if(this.hunger === 10) {
+            console.log('rick dies')
+            $('#rick3').attr('src', 'ricktomb.png')
+            $('#rick3').attr('id','deadrick')
             clearInterval(interval); 
         } else if(this.sleepiness === 10){
+            console.log('rick dies')
+            $('#rick3').attr('src', 'ricktomb.png')
+            $('#rick3').attr('id','deadrick')
             clearInterval(interval); 
         } else if(this.boredom === 10){
+            console.log('rick dies')
+            $('#rick3').attr('src', 'ricktomb.png')
+            $('#rick3').attr('id','deadrick')
             clearInterval(interval); 
         } else {
             this.gameTimer--
@@ -65,7 +81,7 @@ setGameTimer () {
         $hunger.text(`Hunger: ${this.hunger}`)
             if(this.hunger === 10){
                 clearInterval(int);
-             } else if(this.boredom === 10){
+             } else if(this.boredom === 10){ 
                 clearInterval(int);
              } else if(this.sleepiness === 10){
                 clearInterval(int);
@@ -129,13 +145,13 @@ setGameTimer () {
                  }
             },2000)
 
-    },
+    }
     
         
 }
 console.log(game)
-const rick = new Tomagotchi('rick');
-console.log(rick, 'rick')
+// const rick = new Tomagotchi('rick');
+// console.log(rick, 'rick')
 
 
 

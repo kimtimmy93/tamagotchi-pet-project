@@ -83,11 +83,32 @@ html {
     z-index: 3;
 }
 
+#deadrick {
+    width: 170px;
+    height: 170px;
+    margin-right: 40px;
+    bottom: 245px;
+    position: relative;
+    opacity: 0.9;
+    z-index: 3;
+}
+
 @keyframes nudge {
     100% {
       transform: translateX(-30%) translateX(70%);
       top: 50%;
     }
+}
+
+#name {
+    margin-top: 565px;
+    left: 100px;
+    text-align: right;
+    position: absolute;
+    z-index: 3;
+    color: #35cc04;
+    font-family: 'VT323', monospace;
+    font-size: 15pt;
 }
 
 #hunger {
