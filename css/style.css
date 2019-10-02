@@ -190,19 +190,19 @@ button {
 }
 
 #feed:active {
-    background: #fff;
+    background: #1E90FF;
 }
 
 #play:active {
-    background: #fff;
+    background: #1E90FF;
 }
 
 #lights:active {
-    background: #fff;
+    background: #1E90FF;
 }
 
 #start:active {
-    background: #fff;
+    background: #DC143C;
 }
 
 .buttons button:focus {

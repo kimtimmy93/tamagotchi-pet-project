@@ -9,12 +9,15 @@ $('#start').on('click', () => {
 
 $('#feed').on('click', () => {
     game.hunger--
+    $('#hunger').text(`Hunger: ${game.hunger}`)
 });
 $('#play').on('click', () => {
     game.boredom--
+    $('#boredom').text(`Boredom: ${game.boredom}`)
 });
 $('#lights').on('click', () => {
     game.sleepiness--
+    $('#sleepiness').text(`Sleepiness: ${game.sleepiness}`)
 });
 
 
