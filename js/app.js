@@ -4,12 +4,13 @@ $('#start').on('click', () => {
     game.setBoredom();
     game.setHunger();
     game.setGameTimer();
+    game.setLevel();
   });
 
 class Tomagotchi {
     constructor (name) {
         this.name = name;
-        this.health = 100;
+    
     }
 }
 console.log(Tomagotchi); 
@@ -20,6 +21,7 @@ hunger: 0,
 sleepiness: 0,
 boredom: 0,
 level: 0,
+health: 100,
 setGameTimer () {
     const $gameTimer = $('#gameTimer')
 
@@ -42,7 +44,7 @@ setGameTimer () {
         $hunger.text(`Hunger: ${this.hunger}`)
             if(this.hunger === 10){
                 clearInterval(int);
-             }
+             } 
         },1000)   
     },
     setSleepiness() {
@@ -55,8 +57,7 @@ setGameTimer () {
                  clearInterval(int);
               }
          },1500) 
-            
-            
+                 
     },
     setBoredom() {
         const $boredom = $('#boredom')
@@ -70,7 +71,19 @@ setGameTimer () {
         },2000) 
             
             
-    }
+    },
+    setLevel (){
+        const $level = $('#level')
+        const int = setInterval(() => {
+            this.level++
+            $level.text(`Level: ${this.level}`)
+                if(this.level === 1000){
+                    clearInterval(int);
+                 }
+            },2000)
+
+    },
+    
         
 }
 console.log(game)
