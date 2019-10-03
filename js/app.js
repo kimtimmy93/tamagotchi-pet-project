@@ -30,7 +30,7 @@ $('#start').on('click', () => {
 //   $('#reset').on('click', () => {
 
 //   });
-
+// $(document).ready(function() { 
 $('#feed').on('click', () => {
     if(game.hunger > 0){
         game.hunger--
@@ -49,12 +49,7 @@ $('#lights').on('click', () => {
         $('#sleepiness').text(`Sleepiness: ${game.sleepiness}`)
     } 
 });
-$('button').click(function() { 
-    $('#feed').off('click');
-    $('#play').off('click');
-    $('#lights').off('click');
-});
-
+// }); 
 
 class Tomagotchi {
     constructor (name) {
@@ -70,7 +65,7 @@ console.log(Tomagotchi);
 
 
 const game = {
-gameTimer: 59,
+gameTimer: 10,
 hunger: 0,
 sleepiness: 0,
 boredom: 0,
@@ -79,11 +74,20 @@ setGameTimer () {
     const $gameTimer = $('#gameTimer')
 
     const interval = setInterval(() => {
-        
+        // if (this.game === 0||this.hunger === 10 || this.boredom === 10 || this.sleepiness === 10){
+            
+        // }
         if(this.gameTimer === 0){
             clearInterval(interval); //stops the interval
             $('#rick1').attr('src', 'go.gif')
             $('#rick1').attr('id', 'gameover')
+            $('#rick2').attr('src', 'go.gif')
+            $('#rick2').attr('id', 'gameover')
+            $('#rick3').attr('src', 'go.gif')
+            $('#rick3').attr('id', 'gameover')
+            $('#feed').off();
+            $('#play').off();
+            $('#lights').off();
         } else if(this.hunger === 10) {
             $('#rick1').attr('src', 'ricktomb.png')
             $('#rick1').attr('id','deadrick')
@@ -91,6 +95,9 @@ setGameTimer () {
             $('#rick2').attr('id','deadrick')
             $('#rick3').attr('src', 'ricktomb.png')
             $('#rick3').attr('id','deadrick')
+            $('#feed').off();
+            $('#play').off();
+            $('#lights').off();
             clearInterval(interval); 
         } else if(this.sleepiness === 10){
             $('#rick1').attr('src', 'ricktomb.png')
@@ -99,6 +106,9 @@ setGameTimer () {
             $('#rick2').attr('id','deadrick')
             $('#rick3').attr('src', 'ricktomb.png')
             $('#rick3').attr('id','deadrick')
+            $('#feed').off();
+            $('#play').off();
+            $('#lights').off();
             clearInterval(interval); 
         } else if(this.boredom === 10){
             $('#rick1').attr('src', 'ricktomb.png')
@@ -107,6 +117,9 @@ setGameTimer () {
             $('#rick2').attr('id','deadrick')
             $('#rick3').attr('src', 'ricktomb.png')
             $('#rick3').attr('id','deadrick')
+            $('#feed').off();
+            $('#play').off();
+            $('#lights').off();
             clearInterval(interval); 
         } else {
             this.gameTimer--
@@ -192,14 +205,17 @@ setGameTimer () {
                  } else if(this.gameTimer === 0) {
                     clearInterval(int);
                  }
-            },3000)
-    }
+            },1000)
+        },
 }
+
+
+// $('#feed').off();
+// $('#play').off();
+// $('#lights').off();
+
 console.log(game)
 
-
-// deactivate buttons once pet dies
-// once pet dies, start over after alert
 // deactivate everything when timer hits 0
 
 

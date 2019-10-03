@@ -1,5 +1,6 @@
 html {
-    background-color: rgba(255,0,255)
+    background-color: rgba(255,0,255);
+    background-image: linear-gradient(rgba(255,0,200), rgba(255,0,255));
 }
 .container {
     width: 600px;
@@ -61,8 +62,8 @@ html {
 }
 
 #rick1 {
-    width: 90px;
-    height: 90px;
+    width: 87px;
+    height: 87px;
     margin-right: 40px;
     bottom: 540px;
     position: relative;
@@ -82,20 +83,20 @@ html {
 
 }
 #rick3 {
-    width: 250px;
-    height: 250px;
-    margin-right: 40px;
+    width: 240px;
+    height: 240px;
+    margin-right: 10px;
     margin-top: -50px;
     bottom: 540px;
     position: relative;
     opacity: 0.9;
-    animation: nudge 2s linear infinite alternate;
+    animation: spin 2s linear infinite alternate;
     z-index: 3;
 }
 
 #deadrick {
-    width: 250px;
-    height: 250px;
+    width: 240px;
+    height: 240px;
     /* margin-right: 5px; */
     bottom: 580px;
     position: relative;
@@ -105,9 +106,9 @@ html {
 
 #gameover {
     width: 400px;
-    height: 500px;
+    height: 300px;
     margin-right: 5px;
-    margin-top: -100px;
+    margin-top: -50px;
     bottom: 540px;
     position: relative;
     opacity: 0.8;
@@ -126,6 +127,10 @@ html {
       transform: translateY(-50%) translateY(70%);
       top: 40%;
     }
+}
+
+@keyframes spin { 
+    100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } 
 }
 
 #name {
