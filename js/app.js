@@ -7,31 +7,28 @@ $('#start').on('click', () => {
     game.setLevel();
 
 
-    const name = prompt("Enter your pet's name!", "Your pet name here")
+    const name = prompt("Enter your RickName!", "Your RickName here")
     const rick = new Tomagotchi(name);
     rick.setName();
 
   });
 
 $('#feed').on('click', () => {
+    if(game.hunger > 0){
         game.hunger--
         $('#hunger').text(`Hunger: ${game.hunger}`)
-    if(game.hunger > 0){
-       
-    }
+    }   
 });
 $('#play').on('click', () => {
+    if(game.boredom > 0){
         game.boredom--
         $('#boredom').text(`Boredom: ${game.boredom}`)
-    if(game.boredom > 0){
-        
     }
 });
 $('#lights').on('click', () => {
+    if(game.sleepiness > 0){
         game.sleepiness--
         $('#sleepiness').text(`Sleepiness: ${game.sleepiness}`)
-    if(game.sleepiness > 0){
-        
     }
 });
 
@@ -43,7 +40,7 @@ class Tomagotchi {
     setName () {
         const $name = $('#name')
         // $name.val(this.name);
-        $name.text(`Name: ${this.name}`)
+        $name.text(`RickName: ${this.name}`)
         }
 }
 console.log(Tomagotchi); 
@@ -63,17 +60,14 @@ setGameTimer () {
         if(this.gameTimer === 0){
             clearInterval(interval); //stops the interval
         } else if(this.hunger === 10) {
-            console.log('rick dies')
             $('#rick3').attr('src', 'ricktomb.png')
             $('#rick3').attr('id','deadrick')
             clearInterval(interval); 
         } else if(this.sleepiness === 10){
-            console.log('rick dies')
             $('#rick3').attr('src', 'ricktomb.png')
             $('#rick3').attr('id','deadrick')
             clearInterval(interval); 
         } else if(this.boredom === 10){
-            console.log('rick dies')
             $('#rick3').attr('src', 'ricktomb.png')
             $('#rick3').attr('id','deadrick')
             clearInterval(interval); 
@@ -139,10 +133,13 @@ setGameTimer () {
                     clearInterval(int);
                  } else if(this.hunger === 10){
                     clearInterval(int);
+                    alert(`Your Rick has died :(`)
                  } else if(this.boredom === 10){
                     clearInterval(int);
+                    alert(`Your Rick has died :(`)
                  } else if(this.sleepiness === 10){
                     clearInterval(int);
+                    alert(`Your Rick has died :(`)
                  } else if(this.gameTimer === 0){
                      clearInterval(int);
                  } else if(this.level < 2){
