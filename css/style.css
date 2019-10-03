@@ -11,7 +11,7 @@ html {
     text-align: center;
     position: relative;
     z-index: 1;
-    border: 5px solid #ffc000;
+    border: 6px solid rgba(53,201,221,0.7);
 }
 
 #gameTimer {
@@ -77,7 +77,7 @@ html {
     bottom: 540px;
     position: relative;
     opacity: 0.9;
-    animation: nudge 2s linear infinite alternate;
+    animation: hop 2s linear infinite alternate;
     z-index: 3;
 
 }
@@ -103,10 +103,28 @@ html {
     z-index: 3;
 }
 
+#gameover {
+    width: 400px;
+    height: 500px;
+    margin-right: 5px;
+    margin-top: -100px;
+    bottom: 540px;
+    position: relative;
+    opacity: 0.8;
+    z-index: 3;
+}
+
 @keyframes nudge {
     100% {
       transform: translateX(-30%) translateX(70%);
       top: 50%;
+    }
+}
+
+@keyframes hop {
+    100% {
+      transform: translateY(-50%) translateY(70%);
+      top: 40%;
     }
 }
 
@@ -118,7 +136,7 @@ html {
     z-index: 3;
     color: #35cc04;
     font-family: 'VT323', monospace;
-    font-size: 15pt;
+    font-size: 17pt;
 }
 
 #hunger {
@@ -129,7 +147,7 @@ html {
     z-index: 3;
     color: #35cc04;
     font-family: 'VT323', monospace;
-    font-size: 15pt;
+    font-size: 16pt;
 }
 
 #sleepiness{
@@ -140,7 +158,7 @@ html {
     z-index: 3;
     color: #35cc04;
     font-family: 'VT323', monospace;
-    font-size: 15pt;
+    font-size: 16pt;
 }
 
 #boredom {
@@ -151,14 +169,14 @@ html {
     z-index: 3;
     color: #35cc04;
     font-family: 'VT323', monospace;
-    font-size: 15pt;
+    font-size: 16pt;
 }
 
 button {
-    height: 55px;
-    width: 55px;
+    height: 40px;
+    width: 70px;
     /* position: relative; */
-    border-radius: 100%;
+    border-radius: 90px / 45px;
     z-index: 2;
     background: rgba(0,0,255,0.8);
     font-family: 'VT323', monospace;
@@ -198,11 +216,28 @@ button {
     width: 65px;
     position: absolute;
     right: 100px;
-    bottom: 125px;
-    background: red;
+    bottom: 115px;
+    background: #4deeea;
     font-weight: bold;
     text-transform: uppercase;
+    border: 4px solid #4deeea;
+    border-radius: 100%
+}
+
+#reset {
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    right: 160px;
+    bottom: 60px;
+    background: red;
+    font-weight: bold;
+    font-size: 6pt;
+    text-transform: uppercase;
     border: 4px solid red;
+    border-radius: 100%;
+    text-align: center;
+    margin: auto;
 }
 
 #feed:hover {
@@ -225,6 +260,11 @@ button {
     color: #fff;
 }
 
+#reset:hover{
+    font-size: 10pt;
+    color: #fff;
+}
+
 #feed:active {
     font-size: 20pt;
     background: #1E90FF;
@@ -242,7 +282,11 @@ button {
 
 #start:active {
     font-size: 23pt;
-    background: #DC143C;
+    background: rgba(53,201,221,0.7);
+}
+#reset:active {
+    font-size: 12pt;
+    background:#DC143C;
 }
 
 .buttons button:focus {
