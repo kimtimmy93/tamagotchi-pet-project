@@ -84,9 +84,9 @@ html {
 }
 
 #deadrick {
-    width: 170px;
-    height: 170px;
-    margin-right: 40px;
+    width: 250px;
+    height: 250px;
+    /* margin-right: 5px; */
     bottom: 245px;
     position: relative;
     opacity: 0.9;

@@ -5,23 +5,34 @@ $('#start').on('click', () => {
     game.setHunger();
     game.setGameTimer();
     game.setLevel();
-    // Tomagotchi.setName();
+
 
     const name = prompt("Enter your pet's name!", "Your pet name here")
+    const rick = new Tomagotchi(name);
+    rick.setName();
 
   });
 
 $('#feed').on('click', () => {
-    game.hunger--
-    $('#hunger').text(`Hunger: ${game.hunger}`)
+        game.hunger--
+        $('#hunger').text(`Hunger: ${game.hunger}`)
+    if(game.hunger > 0){
+       
+    }
 });
 $('#play').on('click', () => {
-    game.boredom--
-    $('#boredom').text(`Boredom: ${game.boredom}`)
+        game.boredom--
+        $('#boredom').text(`Boredom: ${game.boredom}`)
+    if(game.boredom > 0){
+        
+    }
 });
 $('#lights').on('click', () => {
-    game.sleepiness--
-    $('#sleepiness').text(`Sleepiness: ${game.sleepiness}`)
+        game.sleepiness--
+        $('#sleepiness').text(`Sleepiness: ${game.sleepiness}`)
+    if(game.sleepiness > 0){
+        
+    }
 });
 
 
@@ -146,12 +157,10 @@ setGameTimer () {
             },2000)
 
     }
-    
-        
+       
 }
 console.log(game)
-// const rick = new Tomagotchi('rick');
-// console.log(rick, 'rick')
+
 
 
 
